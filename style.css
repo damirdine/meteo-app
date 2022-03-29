@@ -1,0 +1,29 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 80vh;
+    align-content: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#weekly{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.day{
+    min-width: 100px;
+}
+#date{
+    text-transform: capitalize;
+}
