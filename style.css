@@ -12,16 +12,16 @@ body{
     flex-wrap: wrap;
     min-height: 95vh;
     align-content: center;
-    background-color: darkcyan;
+    background-color:beige;
 }
 main{
-    background-color:beige;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: 5px solid;
     padding: 50px;
     border-radius: 15px;
+    background-color: rgb(189, 235, 235);
 }
 #weekly{
     display: flex;
