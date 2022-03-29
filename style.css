@@ -21,7 +21,7 @@ main{
     border: 5px solid;
     padding: 50px;
     border-radius: 15px;
-    background-color: rgb(189, 235, 235);
+    background-color: rgb(211, 241, 241);
 }
 #weekly{
     display: flex;
