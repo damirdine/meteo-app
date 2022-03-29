@@ -3,6 +3,7 @@ const actualTempTxt = document.querySelector('#actual-temp');
 const cityTxt = document.querySelector('#city');
 const dateTxt = document.querySelector('#date');
 const weeklyTxt = document.querySelector('#weekly');
+
 let lat;
 let lon;
 

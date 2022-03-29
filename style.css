@@ -1,20 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     /* margin: 0;
     padding: 0; */
     box-sizing: border-box;
 }
 body{
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    min-height: 80vh;
+    min-height: 95vh;
     align-content: center;
+    background-color: darkcyan;
 }
 main{
+    background-color:beige;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 5px solid;
+    padding: 50px;
+    border-radius: 15px;
 }
 #weekly{
     display: flex;
@@ -24,6 +31,14 @@ main{
 .day{
     min-width: 100px;
 }
+.day + .day {
+    border-left: 1px solid;
+    padding: 0 15px;
+}
 #date{
     text-transform: capitalize;
+}
+#actual-temp{
+    font-size: 24px;
+    font-weight: 900;
 }
