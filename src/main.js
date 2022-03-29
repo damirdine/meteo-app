@@ -44,11 +44,11 @@ if (navigator.geolocation) {
                             dayTxt = `
                                     <div class="day">
                                         <h3>${dateResponse}</h3>
-                                        <p>min : <span id="minday1">${Math.floor(json.daily[i].temp.min)}</span>°C</p>
-                                        <p>max : <span id="maxday1">${Math.floor(json.daily[i].temp.max)}</span>°C</p>
+                                        <p>min : <span class="minday">${Math.floor(json.daily[i].temp.min)}°</span></p>
+                                        <p>max : <span class="maxday">${Math.floor(json.daily[i].temp.max)}°</span></p>
                                     </div>
                             `;
-                            weeklyTxt.insertAdjacentHTML("beforeend",dayTxt);                               
+                            weeklyTxt.insertAdjacentHTML("beforeend",dayTxt);                             
                         }
                     }
                 )
@@ -56,5 +56,5 @@ if (navigator.geolocation) {
         )
     });
 } else {
-    alert("activer la geolocalisation");
+    alert("Veillez activer la geolocalisation pour utiliser l'application");
 }

@@ -36,10 +36,39 @@ main{
     border-left: 1px solid;
     padding: 0 15px;
 }
-#date{
+#date,h3{
     text-transform: capitalize;
 }
-#actual-temp{
+#actual-temp,.minday,.maxday,h3{
     font-size: 24px;
     font-weight: 900;
+}
+@media screen and (max-width:726px) {
+    body{
+        font-size:smaller;
+        background-color: rgb(211, 241, 241);
+        margin-top: none;
+        align-content: flex-start;
+    }
+    #weekly{
+        justify-content:baseline;
+        flex-wrap: wrap;
+    }
+    main{
+        width: 100%;
+        border: none;
+        padding: 0 25px;
+    }
+    
+    .day + .day {
+        border-left: 0;
+    }
+    .day{
+        width: 100%;
+        border-left: 0;
+        border-bottom: 1px solid;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-around;
+    }
 }
