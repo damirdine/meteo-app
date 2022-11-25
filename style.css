@@ -24,6 +24,33 @@ main{
     border-radius: 15px;
     background-color: rgb(211, 241, 241);
 }
+.input-search{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+label{
+    margin-right: 2rem;
+    font-size: larger;
+}
+input{
+    height: 2rem;
+    font-weight: 600;
+}
+.list {
+    list-style: none;
+    position: absolute;
+    right: 30%;
+    margin-top: 35px;
+    background-color: rgb(211, 241, 241);
+}
+.list-items{
+    padding: 0.4rem;
+}
+.list-items:hover {
+    background-color: rgb(188, 225, 238);
+    border-radius: 0.05rem;
+}
 #weekly{
     display: flex;
     justify-content: center;
@@ -59,7 +86,16 @@ main{
         border: none;
         padding: 0 25px;
     }
-    
+    .input-search{
+        gap: 1rem;
+        display: grid;
+    }
+    .list{
+        position: initial;
+    }
+    .list-items:focus{
+        background-color: rgb(155, 255, 255);
+    }
     .day + .day {
         border-left: 0;
     }
@@ -70,6 +106,5 @@ main{
         padding: 0 15px;
         display: flex;
         justify-content: space-around;
-        align-item: center;
     }
 }
