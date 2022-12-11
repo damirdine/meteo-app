@@ -7,14 +7,14 @@ const weeklyTxt = document.querySelector('#weekly');
 
 const cityInput = document.querySelector('#city-input')
 
-const apiKey = '8770d91a5e39581cbe0f8b6be7c75f33';
+const API_KEY = '8770d91a5e39581cbe0f8b6be7c75f33';
 
 if(navigator.geolocation){
-    navigator.geolocation.watchPosition(async function (position) {
+    navigator.geolocation.watchPosition(async function (position, lang = 'fr') {
         const {latitude : lat, longitude: lon} = position.coords;
         const {resumeData, dailyData} = await getApiData(lat,lon)
-        displayResumeInfo(resumeData)
-        displayDailyInfo(dailyData)
+        displayResumeInfo(resumeData,lang)
+        displayDailyInfo(dailyData, lang)
     },()=> AppWithOutGeolocation() )
 
 }else{
@@ -32,9 +32,8 @@ async function AppWithOutGeolocation(city = 'Paris',lang='fr') {
 }
 
 async function getApiData(lat,lon,lang='fr') {    
-    const apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=${lang}&appid=${apiKey}`;
-    const apiOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&lang=${lang}&appid=${apiKey}`;
-    console.log(apiCurrent)
+    const apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=${lang}&appid=${API_KEY}`;
+    const apiOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&lang=${lang}&appid=${API_KEY}`;
     let resumeData = await (await fetch(apiCurrent)).json()
     let {daily: dailyData} = await (await fetch(apiOneCall)).json()     
 
@@ -42,7 +41,7 @@ async function getApiData(lat,lon,lang='fr') {
 }
 
 async function getApiDataBySearch(city = "Paris",lang="fr"){
-    const apiCitySearch = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=${lang}&appid=${apiKey}`;
+    const apiCitySearch = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=${lang}&appid=${API_KEY}`;
 
     let {coord : {lon ,lat}} = await (await fetch(apiCitySearch)).json()
 
