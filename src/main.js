@@ -15,7 +15,7 @@ if(navigator.geolocation){
         const {resumeData, dailyData} = await getApiData(lat,lon)
         displayResumeInfo(resumeData)
         displayDailyInfo(dailyData)
-    },()=>AppWithOutGeolocation())
+    },()=> AppWithOutGeolocation() )
 
 }else{
     AppWithOutGeolocation()
@@ -34,7 +34,7 @@ async function AppWithOutGeolocation(city = 'Paris',lang='fr') {
 async function getApiData(lat,lon,lang='fr') {    
     const apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=${lang}&appid=${apiKey}`;
     const apiOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&lang=${lang}&appid=${apiKey}`;
-
+    console.log(apiCurrent)
     let resumeData = await (await fetch(apiCurrent)).json()
     let {daily: dailyData} = await (await fetch(apiOneCall)).json()     
 
@@ -60,7 +60,7 @@ function displayDailyInfo(dailyData,lang) {
             <p>min : <span class="minday">${Math.round(dailyData[i].temp.min)}°</span></p>
             <p>max : <span class="maxday">${Math.round(dailyData[i].temp.max)}°</span></p>
         </div>
-                            `;
+        `;
         weeklyTxt.insertAdjacentHTML("beforeend", dayComponent);
     }
 }

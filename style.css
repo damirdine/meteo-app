@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
-    /* margin: 0;
-    padding: 0; */
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
@@ -13,9 +12,10 @@ body{
     flex-wrap: wrap;
     min-height: 95vh;
     align-content: center;
-    background-color:beige;
+    background-color: beige;
 }
-main{
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,19 +24,23 @@ main{
     border-radius: 15px;
     background-color: rgb(211, 241, 241);
 }
-.input-search{
+
+.input-search {
     display: flex;
     justify-content: space-between;
     margin-right: 5%;
 }
-label{
+
+label {
     margin-right: 2rem;
     font-size: larger;
 }
-input{
+
+input {
     height: 2rem;
     font-weight: 600;
 }
+
 .list {
     list-style: none;
     position: absolute;
@@ -44,62 +48,79 @@ input{
     margin-top: 35px;
     background-color: rgb(211, 241, 241);
 }
-.list-items{
+
+.list-items {
     padding: 0.4rem;
 }
+
 .list-items:hover {
     background-color: rgb(188, 225, 238);
     border-radius: 0.05rem;
 }
-#weekly{
+
+#weekly {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.day{
+
+.day {
     min-width: 100px;
 }
-.day + .day {
+
+.day+.day {
     border-left: 1px solid;
     padding: 0 15px;
 }
-#date,h3{
+
+#date,
+h3 {
     text-transform: capitalize;
 }
-#actual-temp,.minday,.maxday,h3{
+
+#actual-temp,
+.minday,
+.maxday,
+h3 {
     font-size: 24px;
     font-weight: 900;
 }
+
 @media screen and (max-width:726px) {
-    body{
-        font-size:smaller;
+    body {
+        font-size: smaller;
         background-color: rgb(211, 241, 241);
-        margin-top: none;
         align-content: flex-start;
     }
-    #weekly{
-        justify-content:baseline;
+
+    #weekly {
         flex-wrap: wrap;
     }
-    main{
+
+    main {
         width: 100%;
         border: none;
         padding: 0 25px;
     }
-    .input-search{
+
+    .input-search {
         gap: 1rem;
         display: grid;
     }
-    .list{
+
+    .list {
         position: initial;
     }
-    .list-items:focus{
+
+    .list-items:focus {
         background-color: rgb(155, 255, 255);
     }
-    .day + .day {
+
+    .day +.day {
         border-left: 0;
     }
-    .day{
+
+    .day {
         width: 100%;
         border-left: 0;
         border-bottom: 1px solid;
