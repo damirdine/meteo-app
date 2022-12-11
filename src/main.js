@@ -96,17 +96,17 @@ async function cityAutoCompletion(input) {
     });
     removeElements(input);
     cities.forEach((city) => {
-        let listItem = document.createElement("li");
+        let cityItem = document.createElement("li");
         //One common class name
-        listItem.classList.add("list-items");
-        listItem.classList.add("list-group-item");
-        listItem.style.cursor = "pointer";
-        listItem.setAttribute("onclick", `selectedCity("${city.name}")`);
+        cityItem.classList.add("list-items");
+        cityItem.classList.add("list-group-item");
+        cityItem.style.cursor = "pointer";
+        cityItem.setAttribute("onclick", `selectedCity("${city.name}")`);
         //Display matched part in bold
         let word = city.name.replace(input.value, `<b>${input.value}</b>`);
         //display the value in array
-        listItem.innerHTML = `${word} <br> <small class="text-muted">${city.context.join()}</small>`;
-        input.parentElement.querySelector(".list").appendChild(listItem);
+        cityItem.innerHTML = `${word} <br> <small class="text-muted">${city.context.join()}</small>`;
+        input.parentElement.querySelector(".list").appendChild(cityItem);
 
     });
 }
